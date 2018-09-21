@@ -134,7 +134,7 @@ public struct PinterestSegmentStyle {
 
         selectIndex = index
         valueChange?(index)
-        sendActions(for: UIControl.Event.valueChanged)
+        sendActions(for: .valueChanged)
     }
 
     private func setIndicatorFrame(_ frame: CGRect) {
@@ -176,7 +176,7 @@ public struct PinterestSegmentStyle {
         selectedLabelsMaskView.isUserInteractionEnabled = true
 
         let toToSize: (String) -> CGFloat = { text in
-            return (text as NSString).boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: 0.0), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil).width
+            return (text as NSString).boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: 0.0), options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil).width
         }
 
         for (index, title) in titles.enumerated() {
